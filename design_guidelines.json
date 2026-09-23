@@ -1,0 +1,162 @@
+{
+  "build_manifest": {
+    "direction": {
+      "path": "/app/design/direction.html",
+      "app_type": "auto",
+      "ambition": "A2",
+      "mode": "light",
+      "rail": "form",
+      "readiness": "partial",
+      "spine": "LOCAL",
+      "name": "The Master Wheelwright",
+      "tone": "Warm Workshop Manifesto",
+      "axes": {
+        "layout": "centered-stack",
+        "hero": "type-only",
+        "tone_register": "authoritative-craft",
+        "proof": "honest-empty",
+        "motion": "static",
+        "colour": "warm-bone+rust-amber",
+        "type_pairing": "serif-display+sans-body"
+      }
+    },
+    "tone_tokens": {
+      "colors": {
+        "ground": "#FAF7F2",
+        "dark": "#1F1914",
+        "accent": "#E0531A",
+        "accent_hover": "#C2410C",
+        "card": "#FFFFFF",
+        "border": "#E8DFD5",
+        "footer_bg": "#14100C",
+        "footer_border": "#2A231D",
+        "dark_surface": "#2A231D",
+        "dark_border": "#3E342B"
+      },
+      "typography": {
+        "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+        "display": "'Impact', 'Arial Black', -apple-system, sans-serif",
+        "serif": "Georgia, 'Times New Roman', serif",
+        "scale": {
+          "hero": "text-5xl sm:text-7xl lg:text-8xl",
+          "h2": "text-3xl sm:text-5xl",
+          "h3": "text-xl sm:text-2xl",
+          "body": "text-xs sm:text-sm",
+          "labels": "text-[10px] to text-[11px]"
+        }
+      },
+      "spacing": "p-4, p-6, p-8, py-24, gap-4, gap-8, gap-10, gap-12",
+      "border_radius": "rounded-lg, rounded-xl, rounded-2xl, rounded-full",
+      "shadows": "shadow-sm, shadow-md, shadow-2xl"
+    },
+    "conversion_wiring": {
+      "primary_action": "form",
+      "locations": [
+        {
+          "type": "button",
+          "context": "header_nav",
+          "label": "Enquire Now"
+        },
+        {
+          "type": "button",
+          "context": "hero",
+          "label": "Reach Workshop"
+        },
+        {
+          "type": "phone_call",
+          "context": "contact_section",
+          "label": "Call Direct"
+        },
+        {
+          "type": "whatsapp",
+          "context": "contact_section",
+          "label": "Order on WhatsApp"
+        },
+        {
+          "type": "form",
+          "context": "contact_section",
+          "fields": ["Name", "Phone Number", "Vehicle Classification", "Service Required", "Tyre Size or Notes"]
+        }
+      ],
+      "contact_details": {
+        "phone": "placeholder",
+        "whatsapp": "placeholder"
+      }
+    },
+    "content_slots": [
+      {
+        "slot": "brand_name",
+        "text": "SREE LAXMI",
+        "source": "brief"
+      },
+      {
+        "slot": "differentiator",
+        "text": "\"Quick service and honest work for working professionals and heavy commercial haulers who cannot afford wasted hours.\"",
+        "source": "brief"
+      },
+      {
+        "slot": "testimonial_1",
+        "text": "\"They completed wheel balancing during my morning commute. The steering shake at 80 km/h disappeared completely. Honest technicians.\"",
+        "source": "placeholder"
+      },
+      {
+        "slot": "testimonial_2",
+        "text": "\"Reliable alignment for our logistics trucks. Fair rates, quick turnaround, and no unnecessary replacements pushed.\"",
+        "source": "placeholder"
+      },
+      {
+        "slot": "differentiator",
+        "text": "Genuine parts and honest work. Call our desk, chat on WhatsApp, or send an enquiry form for quick slots and tyre price checks.",
+        "source": "brief"
+      },
+      {
+        "slot": "brand_name",
+        "text": "SREE LAXMI AUTOMOBILES",
+        "source": "brief"
+      },
+      {
+        "slot": "differentiator",
+        "text": "Specialized automotive workshop for car & truck wheel alignment, dynamic balancing, genuine tyres, and retreading.",
+        "source": "brief"
+      }
+    ],
+    "fabrication_guardrails": [
+      "Do not add statistics.",
+      "Do not add ratings or review counts.",
+      "Do not add awards or certifications.",
+      "Do not add founding or copyright years.",
+      "Do not add press mentions.",
+      "Do not add named clients.",
+      "Do not add additional testimonials beyond the honest empty placeholders provided."
+    ],
+    "locale": {
+      "language": "en",
+      "formatting": "neutral"
+    }
+  },
+  "typography": {
+    "font_family": {
+      "heading": "'Impact', 'Arial Black', -apple-system, sans-serif",
+      "serif": "Georgia, 'Times New Roman', serif",
+      "body": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+    }
+  },
+  "colors": {
+    "primary": "#FAF7F2",
+    "secondary": "#1F1914",
+    "accent": "#E0531A"
+  },
+  "visual_enhancers": {
+    "shadows": "shadow-sm, shadow-2xl, shadow-md",
+    "radius": "rounded-2xl"
+  },
+  "image_urls": [
+    {
+      "url": "https://images.unsplash.com/photo-1786489623872-2ebdfe51297c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwyfHx0aXJlJTIwd29ya3Nob3AlMjBhbGlnbm1lbnR8ZW58MHx8fHwxNzkwMTQ3MTk2fDA&ixlib=rb-4.1.0&q=85",
+      "description": "wide panoramic view of calibrated tyre alignment bay and genuine tyre inventory",
+      "category": "hero-type-framed"
+    }
+  ],
+  "instructions_to_main_agent": "/app/design/direction.html is the visual source of truth. These guidelines transcribe it and add real images. On any conflict, the direction file wins. Ensure that the form, phone call button, and WhatsApp button are fully wired up based on the provided placeholders. No stats or testimonials should be fabricated.",
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": "All interactive and key informational elements MUST include a data-testid attribute to facilitate robust automated testing. Do not add statistics, ratings, or fabricated testimonials. Respect the approved design layout and colors."
+}
