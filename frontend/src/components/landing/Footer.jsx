@@ -16,6 +16,7 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-[#2a2313]">
           <div className="md:col-span-2 space-y-3">
+            <img src="/logo.png" alt="Sree Laxmi Automobiles logo" className="h-16 w-16 rounded-full object-cover border border-[#d4af37]/40" />
             <span className="font-black text-[#f2e9d8] text-base tracking-tight block">
               SREE LAXMI <span className="text-[#d4af37]">AUTOMOBILES</span>
             </span>

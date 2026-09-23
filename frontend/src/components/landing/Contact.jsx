@@ -14,7 +14,15 @@ const initialForm = {
   notes: "",
 };
 
-export const Contact = () => {
+const digitsOnly = (s) => (s || "").replace(/[^\d]/g, "");
+
+export const Contact = ({ settings }) => {
+  const phoneDisplay = settings?.phone?.trim() || WORKSHOP_PHONE_DISPLAY;
+  const phoneTel = settings?.phone?.trim() ? `tel:+${digitsOnly(settings.phone)}` : WORKSHOP_PHONE_TEL;
+  const waNumber = digitsOnly(settings?.whatsapp);
+  const whatsappUrl = waNumber
+    ? `https://wa.me/${waNumber}?text=${encodeURIComponent("Hello Sree Laxmi Automobiles, I need a quote / slot for my vehicle.")}`
+    : WHATSAPP_URL;
   const [form, setForm] = useState(initialForm);
   const [submitting, setSubmitting] = useState(false);
 
@@ -53,10 +61,10 @@ export const Contact = () => {
                 <div>
                   <span className="text-[11px] text-[#8a7d63] font-medium block">Phone Call</span>
                   <span className="text-xs font-bold text-[#f2e9d8]">Call Workshop Desk</span>
-                  <span className="text-[11px] text-[#8a7d63] block mt-0.5">{WORKSHOP_PHONE_DISPLAY}</span>
+                  <span className="text-[11px] text-[#8a7d63] block mt-0.5">{phoneDisplay}</span>
                 </div>
                 <a
-                  href={WORKSHOP_PHONE_TEL}
+                  href={phoneTel}
                   data-testid="call-direct-btn"
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[#d4af37]/50 text-[#d4af37] hover:bg-[#d4af37] hover:text-[#0a0906] text-xs font-bold transition-colors"
                 >
@@ -70,7 +78,7 @@ export const Contact = () => {
                   <span className="text-xs font-bold text-[#f2e9d8]">Fast Price &amp; Slot Info</span>
                 </div>
                 <a
-                  href={WHATSAPP_URL}
+                  href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid="whatsapp-btn"

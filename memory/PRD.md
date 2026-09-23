@@ -26,11 +26,17 @@
 - Manifesto (3 principles), Services (2 bays), Technical matrix table, Testimonials (2 placeholder slots + share card), FAQ
 - Contact section: call button (tel:), WhatsApp button (wa.me with prefilled text), enquiry form wired to backend, stored in MongoDB
 - All interactive elements carry data-testid
+- Company logo integrated (nav, footer, staff login, favicon); page title/meta updated
+- Staff auth: JWT login at /admin (admin/admin123), bcrypt hashing, brute-force lockout, seeded idempotently
+- Staff dashboard /admin/dashboard: Enquiries table + Settings (phone, WhatsApp, address, hours, alert email, external staff app URL)
+- Tyre price manager integration: "Staff Login" button + dashboard header link open external app https://tire-price-manager.preview.emergentagent.com (URL editable in Settings)
+- Google Map section: auto-appears on landing page once admin saves an address (iframe embed, no API key needed)
+- Enquiry email alerts: Resend via Emergent managed proxy; fires only when admin sets alert_email; send failure never blocks enquiry (verified 202 Accepted)
 
-## Placeholders Pending From Owner
-- Real phone number (currently +91 00000 00000 in /app/frontend/src/constants/site.js)
-- Real WhatsApp number (currently wa.me/910000000000)
-- Workshop address & opening hours (not yet displayed)
+## Placeholders Pending From Owner (admin fills in dashboard Settings)
+- Real phone / WhatsApp numbers (placeholder +91 00000 00000 until set)
+- Workshop address & opening hours (map section hidden until address saved)
+- Enquiry alert email address
 
 ## Backlog
 - P0: Wire real phone/WhatsApp numbers once provided; add address + hours + Google Maps embed
