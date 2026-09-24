@@ -1,3 +1,5 @@
+import { Star } from "lucide-react";
+
 const reviews = [
   {
     quote:
@@ -13,7 +15,8 @@ const reviews = [
   },
 ];
 
-export const Reviews = () => {
+export const Reviews = ({ settings }) => {
+  const googleReviewUrl = settings?.google_review_url?.trim();
   return (
     <section id="reviews" className="py-24 bg-[#0a0906] border-b border-[#2a2313]" data-testid="reviews-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,9 +43,21 @@ export const Reviews = () => {
           <div className="bg-[#0a0906] p-6 rounded-xl border border-dashed border-[#3a2f1b] flex flex-col justify-center items-center text-center" data-testid="share-review-card">
             <div className="text-xs font-bold text-[#f2e9d8]">Share Your Review</div>
             <p className="text-[11px] text-[#8a7d63] mt-1 mb-3">Help daily drivers find reliable automotive care.</p>
-            <a href="#contact" className="text-xs font-bold text-[#d4af37] hover:text-[#eac968] hover:underline" data-testid="share-review-link">
-              Write Feedback &rarr;
-            </a>
+            {googleReviewUrl ? (
+              <a
+                href={googleReviewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#d4af37] hover:bg-[#eac968] text-[#0a0906] text-xs font-bold uppercase tracking-wider transition-colors"
+                data-testid="google-review-btn"
+              >
+                <Star className="w-3.5 h-3.5" /> Review us on Google
+              </a>
+            ) : (
+              <a href="#contact" className="text-xs font-bold text-[#d4af37] hover:text-[#eac968] hover:underline" data-testid="share-review-link">
+                Write Feedback &rarr;
+              </a>
+            )}
           </div>
         </div>
       </div>

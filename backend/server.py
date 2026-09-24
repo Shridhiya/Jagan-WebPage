@@ -270,6 +270,7 @@ class SiteSettings(BaseModel):
     hours: Optional[str] = ""
     alert_email: Optional[str] = ""
     external_staff_url: Optional[str] = ""
+    google_review_url: Optional[str] = ""
 
 
 async def get_settings() -> dict:

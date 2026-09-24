@@ -29,7 +29,7 @@ const LandingPage = () => {
       <Manifesto />
       <Services />
       <Specs />
-      <Reviews />
+      <Reviews settings={settings} />
       <Faq />
       <Contact settings={settings} />
       <MapSection settings={settings} />

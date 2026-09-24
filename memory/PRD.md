@@ -31,6 +31,7 @@
 - Staff dashboard /admin/dashboard: Enquiries table + Settings (phone, WhatsApp, address, hours, alert email, external staff app URL)
 - Tyre price manager integration: "Staff Login" button + dashboard header link open external app https://tire-price-manager.preview.emergentagent.com (URL editable in Settings)
 - Google Map section: auto-appears on landing page once admin saves an address (iframe embed, no API key needed)
+- Google Reviews: "Review us on Google" gold button in the Feedback section; appears once admin pastes the Google Business review link in Settings
 - Enquiry email alerts: Resend via Emergent managed proxy; fires only when admin sets alert_email; send failure never blocks enquiry (verified 202 Accepted)
 
 ## Placeholders Pending From Owner (admin fills in dashboard Settings)

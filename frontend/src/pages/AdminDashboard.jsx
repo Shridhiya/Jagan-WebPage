@@ -11,7 +11,7 @@ const inputCls =
 export default function AdminDashboard() {
   const [tab, setTab] = useState("enquiries");
   const [enquiries, setEnquiries] = useState([]);
-  const [settings, setSettings] = useState({ phone: "", whatsapp: "", address: "", hours: "", alert_email: "", external_staff_url: "" });
+  const [settings, setSettings] = useState({ phone: "", whatsapp: "", address: "", hours: "", alert_email: "", external_staff_url: "", google_review_url: "" });
   const navigate = useNavigate();
 
   const loadEnquiries = useCallback(async () => {
@@ -24,6 +24,7 @@ export default function AdminDashboard() {
     setSettings({
       phone: data.phone || "", whatsapp: data.whatsapp || "", address: data.address || "",
       hours: data.hours || "", alert_email: data.alert_email || "", external_staff_url: data.external_staff_url || "",
+      google_review_url: data.google_review_url || "",
     });
   }, []);
 
@@ -130,6 +131,7 @@ export default function AdminDashboard() {
               ["hours", "Opening Hours (e.g. Mon–Sat 9am–8pm)", "settings-hours-input"],
               ["alert_email", "Email for Enquiry Alerts", "settings-email-input"],
               ["external_staff_url", "External Staff App URL (optional — if you already have a tyre-price app, paste its link and the Staff Login button will open it)", "settings-staff-url-input"],
+              ["google_review_url", "Google Review Link (from your Google Business Profile — 'Ask for reviews' link)", "settings-google-review-input"],
             ].map(([key, label, tid]) => (
               <div key={key}>
                 <label className="block text-xs font-bold text-[#cbbfa5] mb-1">{label}</label>
